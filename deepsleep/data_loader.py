@@ -22,8 +22,8 @@ class NonSeqDataLoader(object):
         with np.load(npz_file) as f:
             data = f["x"]
             labels = f["y"]
-            # sampling_rate = f["fs"]
-        return data, labels
+            sampling_rate = f["fs"]
+        return data, labels, sampling_rate
 
     def _load_npz_list_files(self, npz_files):
         """Load data and labels from list of npz files."""
@@ -32,7 +32,7 @@ class NonSeqDataLoader(object):
         fs = None
         for npz_f in npz_files:
             print("Loading {} ...".format(npz_f))
-            tmp_data, tmp_labels = self._load_npz_file(npz_f)
+            tmp_data, tmp_labels, sampling_rate = self._load_npz_file(npz_f)
             if fs is None:
                 fs = sampling_rate
             elif fs != sampling_rate:
@@ -219,7 +219,7 @@ class SeqDataLoader(object):
         fs = None
         for npz_f in npz_files:
             print("Loading {} ...".format(npz_f))
-            tmp_data, tmp_labels = self._load_npz_file(npz_f)
+            tmp_data, tmp_labels, sampling_rate = self._load_npz_file(npz_f)
             if fs is None:
                 fs = sampling_rate
             elif fs != sampling_rate:

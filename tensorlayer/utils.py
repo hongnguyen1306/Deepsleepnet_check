@@ -287,15 +287,21 @@ def evaluation(y_test=None, y_predict=None, n_classes=None):
     --------
     >>> c_mat, f1, acc, f1_macro = evaluation(y_test, y_predict, n_classes)
     """
-    from sklearn.metrics import confusion_matrix, f1_score, accuracy_score
+    from sklearn.metrics import confusion_matrix, f1_score, accuracy_score, precision_score
     c_mat = confusion_matrix(y_test, y_predict, labels = [x for x in range(n_classes)])
     f1    = f1_score(y_test, y_predict, average = None, labels = [x for x in range(n_classes)])
-    f1_macro = f1_score(y_test, y_predict, average='macro')
+    f1_macro = f1_score(y_test, y_predict, average='weighted')
+    precision = precision_score(y_test, y_predict, average=None, labels=[x for x in range(n_classes)])
+    precision_weighted = precision_score(y_test, y_predict, average='weighted', labels=[x for x in range(n_classes)])
     acc   = accuracy_score(y_test, y_predict)
+
     print(('confusion matrix: \n',c_mat))
     print(('f1-score:',f1))
-    print(('f1-score(macro):',f1_macro))   # same output with > f1_score(y_true, y_pred, average='macro')
+    print(('f1-score(weighted):',f1_macro))   # same output with > f1_score(y_true, y_pred, average='macro')
+    print(('precision-score:', precision))
+    print(('precision (weighted):', precision_weighted))
     print(('accuracy-score:', acc))
+
     return c_mat, f1, acc, f1_macro
 
 def dict_to_one(dp_dict={}):

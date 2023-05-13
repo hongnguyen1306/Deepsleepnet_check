@@ -10,12 +10,16 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, accuracy_score, precision_score
 
 from deepsleep.data_loader import NonSeqDataLoader, SeqDataLoader
 from deepsleep.model import DeepFeatureNet, DeepSleepNet
 from deepsleep.optimize import adam, adam_clipping_list_lr
 from deepsleep.utils import iterate_minibatches, iterate_batch_seq_minibatches
+import logging
+
+logging.basicConfig(filename='./output/train.log', level=logging.INFO)
+
 
 # from tensorlayer.db import TensorDB
 # from tensorlayer.db import JobStatus
@@ -28,9 +32,9 @@ class Trainer(object):
 
     def __init__(
         self,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+        interval_plot_filter=20,
+        interval_save_model=10,
+        interval_print_cm=5
     ):
         self.interval_plot_filter = interval_plot_filter
         self.interval_save_model = interval_save_model
@@ -39,8 +43,8 @@ class Trainer(object):
     def print_performance(self, sess, output_dir, network_name,
                            n_train_examples, n_valid_examples,
                            train_cm, valid_cm, epoch, n_epochs,
-                           train_duration, train_loss, train_acc, train_f1,
-                           valid_duration, valid_loss, valid_acc, valid_f1):
+                           train_duration, train_loss, train_acc, train_acc_sklearn, train_f1, train_f1_weighted, train_precision, train_precision_weighted,
+                           valid_duration, valid_loss, valid_acc, valid_acc_sklearn, valid_f1, valid_f1_weighted, valid_precision, valid_precision_weighted):
         # Get regularization loss
         train_reg_loss = tf.add_n(tf.compat.v1.get_collection("losses", scope=network_name + "\/"))
         train_reg_loss_value = sess.run(train_reg_loss)
@@ -53,40 +57,73 @@ class Trainer(object):
                 datetime.now(), epoch+1
             ))
             print((
-                "train ({:.3f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, "
-                "f1={:.3f}".format(
+                "train ({:.3f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, acc_sklearn={:.3f} "
+                "f1={:.3f}, f1_weighted={:.3f}, precision={:.3f}, precision_weighted={:.3f} ".format(
                     train_duration, n_train_examples,
                     train_loss, train_reg_loss_value,
-                    train_acc, train_f1
+                    train_acc, train_acc_sklearn,
+                    train_f1, train_f1_weighted,
+                    train_precision, train_precision_weighted
                 )
             ))
             print(train_cm)
             print((
-                "valid ({:.3f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, "
-                "f1={:.3f}".format(
+                "valid ({:.3f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, acc_sklearn={:.3f} "
+                "f1={:.3f}, f1_weighted={:.3f}, precision={:.3f}, precision_weighted={:.3f} ".format(
                     valid_duration, n_valid_examples,
                     valid_loss, valid_reg_loss_value,
-                    valid_acc, valid_f1
+                    valid_acc, val_acc_sklearn,
+                    val_f1, val_f1_weighted,
+                    val_precision, val_precision_weighted
                 )
             ))
             print(valid_cm)
             print(" ")
         else:
+            print("\nelse: result of each epoch")
             print((
                 "epoch {}: "
                 "train ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), "
-                "acc={:.3f}, f1={:.3f} | "
+                "acc={:.3f}, acc_sklearn={:.3f}, "
+                "f1={:.3f}, f1_weighted={:.3f}, "
+                "precision={:.3f}, precision_weighted={:.3f} | "
                 "valid ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), "
-                "acc={:.3f}, f1={:.3f}".format(
+                "acc={:.3f}, acc_sklearn={:.3f}, "
+                "f1={:.3f}, f1_weighted={:.3f}, "
+                "precision={:.3f}, precision_weighted={:.3f}".format(
                     epoch+1,
                     train_duration, n_train_examples,
                     train_loss, train_reg_loss_value,
-                    train_acc, train_f1,
+                    train_acc, train_acc_sklearn,
+                    train_f1, train_f1_weighted,
+                    train_precision, train_precision_weighted,
                     valid_duration, n_valid_examples,
                     valid_loss, valid_reg_loss_value,
-                    valid_acc, valid_f1
+                    valid_acc, val_acc_sklearn,
+                    val_f1, val_f1_weighted,
+                    val_precision, val_precision_weighted
                 )
             ))
+
+        logging.info(
+            "epoch {} : "
+            "train ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, acc_sklearn={:.3f}, "
+            "f1={:.3f}, f1_weighted={:.3f}, precision={:.3f}, precision_weighted={:.3f} | "
+            "valid ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, acc_sklearn={:.3f}, "
+            "f1={:.3f}, f1_weighted={:.3f}, precision={:.3f}, precision_weighted={:.3f}".format(
+                epoch+1,
+                train_duration, n_train_examples,
+                train_loss, train_reg_loss_value,
+                train_acc, train_acc_sklearn,
+                train_f1, train_f1_weighted,
+                train_precision, train_precision_weighted,
+                valid_duration, n_valid_examples,
+                valid_loss, valid_reg_loss_value,
+                valid_acc, val_acc_sklearn,
+                val_f1, val_f1_weighted,
+                val_precision, val_precision_weighted
+            )
+        )
 
     def print_network(self, network):
         print("inputs ({}): {}".format(
@@ -137,9 +174,9 @@ class DeepFeatureNetTrainer(Trainer):
         batch_size, 
         input_dims, 
         n_classes,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+        interval_plot_filter=20,
+        interval_save_model=10,
+        interval_print_cm=5
     ):
         super(self.__class__, self).__init__(
             interval_plot_filter=interval_plot_filter,
@@ -317,10 +354,17 @@ class DeepFeatureNetTrainer(Trainer):
                 # Performance history
                 all_train_loss = np.zeros(n_epochs)
                 all_train_acc = np.zeros(n_epochs)
+                all_train_acc_sklearn = np.zeros(n_epochs)
                 all_train_f1 = np.zeros(n_epochs)
+                all_train_f1_weighted = np.zeros(n_epochs)
+                all_train_precision = np.zeros(n_epochs)
+                all_train_precision_weighted = np.zeros(n_epochs)
+
                 all_valid_loss = np.zeros(n_epochs)
                 all_valid_acc = np.zeros(n_epochs)
-                all_valid_f1 = np.zeros(n_epochs)
+                all_valid_acc_sklearn = np.zeros(n_epochs)
+                all_valid_precision = np.zeros(n_epochs)
+                all_valid_precision_weighted = np.zeros(n_epochs)
 
             # Loop each epoch
             for epoch in range(sess.run(global_step), n_epochs):
@@ -346,7 +390,14 @@ class DeepFeatureNetTrainer(Trainer):
                 n_train_examples = len(y_true_train)
                 train_cm = confusion_matrix(y_true_train, y_pred_train)
                 train_acc = np.mean(y_true_train == y_pred_train)
+                train_acc_sklearn = accuracy_score(y_true_train, y_pred_train)
                 train_f1 = f1_score(y_true_train, y_pred_train, average="macro")
+                train_f1_weighted = f1_score(y_true_train, y_pred_train, average="weighted")
+                train_precision = precision_score(y_true_train, y_pred_train, average="macro")
+                train_precision_weighted = precision_score(y_true_train, y_pred_train, average="weighted")
+
+
+
 
                 # # MONITORING
                 # print "AFTER TRAINING and BEFORE VALID"
@@ -366,7 +417,12 @@ class DeepFeatureNetTrainer(Trainer):
                 n_valid_examples = len(y_true_val)
                 valid_cm = confusion_matrix(y_true_val, y_pred_val)
                 valid_acc = np.mean(y_true_val == y_pred_val)
+                valid_acc_sklearn = accuracy_score(y_true_val, y_pred_val)
                 valid_f1 = f1_score(y_true_val, y_pred_val, average="macro")
+                valid_f1_weighted = f1_score(y_true_val, y_pred_val, average="weighted")
+                val_precision = precision_score(y_true_val, y_pred_train, average="macro")
+                val_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
+
 
                 # db.train_log(args={
                 #     "n_folds": self.n_folds,
@@ -389,26 +445,40 @@ class DeepFeatureNetTrainer(Trainer):
 
                 all_train_loss[epoch] = train_loss
                 all_train_acc[epoch] = train_acc
+                all_train_acc_sklearn[epoch] = train_acc_sklearn
                 all_train_f1[epoch] = train_f1
+                all_train_f1_weighted[epoch] = train_f1_weighted
+                all_train_precision[epoch] = train_precision
+                all_train_precision_weighted[epoch] = train_precision_weighted
+
                 all_valid_loss[epoch] = valid_loss
                 all_valid_acc[epoch] = valid_acc
+                all_valid_acc_sklearn[epoch] = valid_acc_sklearn
                 all_valid_f1[epoch] = valid_f1
+                all_valid_f1_weighted[epoch] = valid_f1_weighted
+                all_valid_precision[epoch] = valid_precision
+                all_valid_precision_weighted[epoch] = valid_precision_weighted
 
                 # Report performance
                 self.print_performance(
                     sess, output_dir, train_net.name,
                     n_train_examples, n_valid_examples,
                     train_cm, valid_cm, epoch, n_epochs,
-                    train_duration, train_loss, train_acc, train_f1,
-                    valid_duration, valid_loss, valid_acc, valid_f1
+                    train_duration, train_loss, train_acc, train_f1, train_f1_weighted, train_precision, train_precision_weighted,
+                    valid_duration, valid_loss, valid_acc, valid_f1, valid_f1_weighted, val_precision, val_precision_weighted
                 )
+
 
                 # Save performance history
                 np.savez(
                     os.path.join(output_dir, "perf_fold{}.npz".format(self.fold_idx)),
                     train_loss=all_train_loss, valid_loss=all_valid_loss,
                     train_acc=all_train_acc, valid_acc=all_valid_acc,
+                    train_acc_sklearn=all_train_acc_sklearn, valid_acc_sklearn=all_valid_acc_sklearn,
                     train_f1=all_train_f1, valid_f1=all_valid_f1,
+                    train_f1_weighted=all_train_f1_weighted, valid_f1_weighted=all_valid_f1_weighted,
+                    train_precision=all_train_precision, val_precision=val_precision,
+                    train_precision_weighted=all_train_precision_weighted, val_precision_weighted=all_val_precision_weighted,
                     y_true_val=np.asarray(y_true_val),
                     y_pred_val=np.asarray(y_pred_val)
                 )
@@ -464,9 +534,9 @@ class DeepSleepNetTrainer(Trainer):
         seq_length,
         n_rnn_layers,
         return_last,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+        interval_plot_filter=20,
+        interval_save_model=10,
+        interval_print_cm=5
     ):
         super(self.__class__, self).__init__(
             interval_plot_filter=interval_plot_filter,
@@ -708,10 +778,18 @@ class DeepSleepNetTrainer(Trainer):
                 # Performance history
                 all_train_loss = np.zeros(n_epochs)
                 all_train_acc = np.zeros(n_epochs)
+                all_train_acc_sklearn = np.zeros(n_epochs)
                 all_train_f1 = np.zeros(n_epochs)
+                all_train_f1_weighted = np.zeros(n_epochs)
+                all_train_precision = np.zeros(n_epochs)
+                all_train_precision_weighted = np.zeros(n_epochs)
+
                 all_valid_loss = np.zeros(n_epochs)
                 all_valid_acc = np.zeros(n_epochs)
-                all_valid_f1 = np.zeros(n_epochs)
+                all_valid_acc_sklearn = np.zeros(n_epochs)
+                all_valid_precision = np.zeros(n_epochs)
+                all_valid_precision_weighted = np.zeros(n_epochs)
+
 
             # Loop each epoch
             for epoch in range(sess.run(global_step), n_epochs):
@@ -726,7 +804,12 @@ class DeepSleepNetTrainer(Trainer):
                 n_train_examples = len(y_true_train)
                 train_cm = confusion_matrix(y_true_train, y_pred_train)
                 train_acc = np.mean(y_true_train == y_pred_train)
+                train_acc_sklearn = accuracy_score(y_true_train, y_pred_train)
                 train_f1 = f1_score(y_true_train, y_pred_train, average="macro")
+                train_f1_weighted = f1_score(y_true_train, y_pred_train, average="weighted")
+                train_precision = precision_score(y_true_train, y_pred_train, average="macro")
+                train_precision_weighted = precision_score(y_true_train, y_pred_train, average="weighted")
+
 
                 # Evaluate the model on the validation set
                 y_true_val, y_pred_val, valid_loss, valid_duration = \
@@ -739,14 +822,35 @@ class DeepSleepNetTrainer(Trainer):
                 n_valid_examples = len(y_true_val)
                 valid_cm = confusion_matrix(y_true_val, y_pred_val)
                 valid_acc = np.mean(y_true_val == y_pred_val)
+                valid_acc_sklearn = accuracy_score(y_true_val, y_pred_val)
                 valid_f1 = f1_score(y_true_val, y_pred_val, average="macro")
+                valid_f1_weighted = f1_score(y_true_val, y_pred_val, average="weighted")
+                val_precision = precision_score(y_true_val, y_pred_train, average="macro")
+                val_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
+
+                # all_train_loss[epoch] = train_loss
+                # all_train_acc[epoch] = train_acc
+                # all_train_f1[epoch] = train_f1
+                # all_valid_loss[epoch] = valid_loss
+                # all_valid_acc[epoch] = valid_acc
+                # all_valid_f1[epoch] = valid_f1
 
                 all_train_loss[epoch] = train_loss
                 all_train_acc[epoch] = train_acc
+                all_train_acc_sklearn[epoch] = train_acc_sklearn
                 all_train_f1[epoch] = train_f1
+                all_train_f1_weighted[epoch] = train_f1_weighted
+                all_train_precision[epoch] = train_precision
+                all_train_precision_weighted[epoch] = train_precision_weighted
+
                 all_valid_loss[epoch] = valid_loss
                 all_valid_acc[epoch] = valid_acc
+                all_valid_acc_sklearn[epoch] = valid_acc_sklearn
                 all_valid_f1[epoch] = valid_f1
+                all_valid_f1_weighted[epoch] = valid_f1_weighted
+                all_valid_precision[epoch] = valid_precision
+                all_valid_precision_weighted[epoch] = valid_precision_weighted
+
 
                 # db.train_log(args={
                 #     "n_folds": self.n_folds,
@@ -777,11 +881,23 @@ class DeepSleepNetTrainer(Trainer):
                 )
 
                 # Save performance history
+                # np.savez(
+                #     os.path.join(output_dir, "perf_fold{}.npz".format(self.fold_idx)),
+                #     train_loss=all_train_loss, valid_loss=all_valid_loss,
+                #     train_acc=all_train_acc, valid_acc=all_valid_acc,
+                #     train_f1=all_train_f1, valid_f1=all_valid_f1,
+                #     y_true_val=np.asarray(y_true_val),
+                #     y_pred_val=np.asarray(y_pred_val)
+                # )
                 np.savez(
                     os.path.join(output_dir, "perf_fold{}.npz".format(self.fold_idx)),
                     train_loss=all_train_loss, valid_loss=all_valid_loss,
                     train_acc=all_train_acc, valid_acc=all_valid_acc,
+                    train_acc_sklearn=all_train_acc_sklearn, valid_acc_sklearn=all_valid_acc_sklearn,
                     train_f1=all_train_f1, valid_f1=all_valid_f1,
+                    train_f1_weighted=all_train_f1_weighted, valid_f1_weighted=all_valid_f1_weighted,
+                    train_precision=all_train_precision, val_precision=val_precision,
+                    train_precision_weighted=all_train_precision_weighted, val_precision_weighted=all_val_precision_weighted,
                     y_true_val=np.asarray(y_true_val),
                     y_pred_val=np.asarray(y_pred_val)
                 )

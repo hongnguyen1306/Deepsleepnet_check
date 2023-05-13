@@ -420,7 +420,7 @@ class DeepFeatureNetTrainer(Trainer):
                 valid_acc_sklearn = accuracy_score(y_true_val, y_pred_val)
                 valid_f1 = f1_score(y_true_val, y_pred_val, average="macro")
                 valid_f1_weighted = f1_score(y_true_val, y_pred_val, average="weighted")
-                val_precision = precision_score(y_true_val, y_pred_train, average="macro")
+                val_precision = precision_score(y_true_val, y_pred_val, average="macro")
                 val_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
 
 
@@ -825,7 +825,7 @@ class DeepSleepNetTrainer(Trainer):
                 valid_acc_sklearn = accuracy_score(y_true_val, y_pred_val)
                 valid_f1 = f1_score(y_true_val, y_pred_val, average="macro")
                 valid_f1_weighted = f1_score(y_true_val, y_pred_val, average="weighted")
-                val_precision = precision_score(y_true_val, y_pred_train, average="macro")
+                val_precision = precision_score(y_true_val, y_pred_val, average="macro")
                 val_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
 
                 # all_train_loss[epoch] = train_loss

@@ -74,7 +74,7 @@ class Trainer(object):
                     valid_loss, valid_reg_loss_value,
                     valid_acc, val_acc_sklearn,
                     val_f1, val_f1_weighted,
-                    val_precision, val_precision_weighted
+                    valid_precision, valid_precision_weighted
                 )
             ))
             print(valid_cm)
@@ -101,7 +101,7 @@ class Trainer(object):
                     valid_loss, valid_reg_loss_value,
                     valid_acc, val_acc_sklearn,
                     val_f1, val_f1_weighted,
-                    val_precision, val_precision_weighted
+                    valid_precision, valid_precision_weighted
                 )
             ))
 
@@ -121,7 +121,7 @@ class Trainer(object):
                 valid_loss, valid_reg_loss_value,
                 valid_acc, val_acc_sklearn,
                 val_f1, val_f1_weighted,
-                val_precision, val_precision_weighted
+                valid_precision, valid_precision_weighted
             )
         )
 
@@ -422,8 +422,8 @@ class DeepFeatureNetTrainer(Trainer):
                 valid_acc_sklearn = accuracy_score(y_true_val, y_pred_val)
                 valid_f1 = f1_score(y_true_val, y_pred_val, average="macro")
                 valid_f1_weighted = f1_score(y_true_val, y_pred_val, average="weighted")
-                val_precision = precision_score(y_true_val, y_pred_val, average="macro")
-                val_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
+                valid_precision = precision_score(y_true_val, y_pred_val, average="macro")
+                valid_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
 
 
                 # db.train_log(args={
@@ -467,7 +467,7 @@ class DeepFeatureNetTrainer(Trainer):
                     n_train_examples, n_valid_examples,
                     train_cm, valid_cm, epoch, n_epochs,
                     train_duration, train_loss, train_acc, train_f1, train_f1_weighted, train_precision, train_precision_weighted,
-                    valid_duration, valid_loss, valid_acc, valid_f1, valid_f1_weighted, val_precision, val_precision_weighted
+                    valid_duration, valid_loss, valid_acc, valid_f1, valid_f1_weighted, valid_precision, valid_precision_weighted
                 )
 
 
@@ -479,8 +479,8 @@ class DeepFeatureNetTrainer(Trainer):
                     train_acc_sklearn=all_train_acc_sklearn, valid_acc_sklearn=all_valid_acc_sklearn,
                     train_f1=all_train_f1, valid_f1=all_valid_f1,
                     train_f1_weighted=all_train_f1_weighted, valid_f1_weighted=all_valid_f1_weighted,
-                    train_precision=all_train_precision, val_precision=val_precision,
-                    train_precision_weighted=all_train_precision_weighted, val_precision_weighted=all_val_precision_weighted,
+                    train_precision=all_train_precision, valid_precision=valid_precision,
+                    train_precision_weighted=all_train_precision_weighted, valid_precision_weighted=all_valid_precision_weighted,
                     y_true_val=np.asarray(y_true_val),
                     y_pred_val=np.asarray(y_pred_val)
                 )
@@ -829,8 +829,8 @@ class DeepSleepNetTrainer(Trainer):
                 valid_acc_sklearn = accuracy_score(y_true_val, y_pred_val)
                 valid_f1 = f1_score(y_true_val, y_pred_val, average="macro")
                 valid_f1_weighted = f1_score(y_true_val, y_pred_val, average="weighted")
-                val_precision = precision_score(y_true_val, y_pred_val, average="macro")
-                val_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
+                valid_precision = precision_score(y_true_val, y_pred_val, average="macro")
+                valid_precision_weighted = precision_score(y_true_val, y_pred_val, average="weighted")
 
                 # all_train_loss[epoch] = train_loss
                 # all_train_acc[epoch] = train_acc
@@ -900,8 +900,8 @@ class DeepSleepNetTrainer(Trainer):
                     train_acc_sklearn=all_train_acc_sklearn, valid_acc_sklearn=all_valid_acc_sklearn,
                     train_f1=all_train_f1, valid_f1=all_valid_f1,
                     train_f1_weighted=all_train_f1_weighted, valid_f1_weighted=all_valid_f1_weighted,
-                    train_precision=all_train_precision, val_precision=val_precision,
-                    train_precision_weighted=all_train_precision_weighted, val_precision_weighted=all_val_precision_weighted,
+                    train_precision=all_train_precision, valid_precision=valid_precision,
+                    train_precision_weighted=all_train_precision_weighted, valid_precision_weighted=all_valid_precision_weighted,
                     y_true_val=np.asarray(y_true_val),
                     y_pred_val=np.asarray(y_pred_val)
                 )

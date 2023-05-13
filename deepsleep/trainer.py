@@ -363,6 +363,8 @@ class DeepFeatureNetTrainer(Trainer):
                 all_valid_loss = np.zeros(n_epochs)
                 all_valid_acc = np.zeros(n_epochs)
                 all_valid_acc_sklearn = np.zeros(n_epochs)
+                all_valid_f1 = np.zeros(n_epochs)
+                all_valid_f1_weighted = np.zeros(n_epochs)
                 all_valid_precision = np.zeros(n_epochs)
                 all_valid_precision_weighted = np.zeros(n_epochs)
 
@@ -787,6 +789,8 @@ class DeepSleepNetTrainer(Trainer):
                 all_valid_loss = np.zeros(n_epochs)
                 all_valid_acc = np.zeros(n_epochs)
                 all_valid_acc_sklearn = np.zeros(n_epochs)
+                all_valid_f1 = np.zeros(n_epochs)
+                all_valid_f1_weighted = np.zeros(n_epochs)
                 all_valid_precision = np.zeros(n_epochs)
                 all_valid_precision_weighted = np.zeros(n_epochs)
 

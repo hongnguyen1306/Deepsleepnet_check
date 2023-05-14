@@ -195,6 +195,9 @@ class DeepFeatureNetTrainer(Trainer):
         self.n_classes = n_classes
 
     def _run_epoch(self, sess, network, inputs, targets, train_op, is_train):
+        # Set GPU visible to Tensorflow
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+
         start_time = time.time()
         y = []
         y_true = []
@@ -255,6 +258,10 @@ class DeepFeatureNetTrainer(Trainer):
         return total_y_true, total_y_pred, total_loss, duration
 
     def train(self, n_epochs, resume):
+        # Set GPU visible to Tensorflow
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+
+
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
             # Build training and validation networks
             train_net = DeepFeatureNet(
@@ -563,6 +570,9 @@ class DeepSleepNetTrainer(Trainer):
         self.return_last = return_last
 
     def _run_epoch(self, sess, network, inputs, targets, train_op, is_train):
+         # Set GPU visible to Tensorflow
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+
         start_time = time.time()
         y = []
         y_true = []
@@ -626,6 +636,9 @@ class DeepSleepNetTrainer(Trainer):
         return total_y_true, total_y_pred, total_loss, duration
 
     def finetune(self, pretrained_model_path, n_epochs, resume):
+         # Set GPU visible to Tensorflow
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+        
         pretrained_model_name = "deepfeaturenet"
 
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:

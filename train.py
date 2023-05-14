@@ -43,7 +43,7 @@ tf.app.flags.DEFINE_integer('pretrain_epochs', 100,
                             """Number of epochs for pretraining DeepFeatureNet.""")
 tf.app.flags.DEFINE_integer('finetune_epochs', 200,
                             """Number of epochs for fine-tuning DeepSleepNet.""")
-tf.app.flags.DEFINE_boolean('resume', False,
+tf.app.flags.DEFINE_boolean('resume', True,
                             """Whether to resume the training process.""")
 
 
@@ -58,9 +58,9 @@ def pretrain(n_epochs):
         batch_size=100,
         input_dims=EPOCH_SEC_LEN*100,
         n_classes=NUM_CLASSES,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+        interval_plot_filter=20,
+        interval_save_model=10,
+        interval_print_cm=5
     )
     pretrained_model_path = trainer.train(
         n_epochs=n_epochs,
@@ -83,9 +83,9 @@ def finetune(model_path, n_epochs):
         seq_length=25,
         n_rnn_layers=2,
         return_last=False,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+        interval_plot_filter=20,
+        interval_save_model=10,
+        interval_print_cm=5
     )
     finetuned_model_path = trainer.finetune(
         pretrained_model_path=model_path,
@@ -97,6 +97,8 @@ def finetune(model_path, n_epochs):
 
 def main(argv=None):
     # Output dir
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+    
     output_dir = os.path.join(
         FLAGS.output_dir, "fold{}".format(FLAGS.fold_idx))
     if not FLAGS.resume:

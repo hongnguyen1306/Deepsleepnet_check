@@ -260,6 +260,10 @@ class DeepFeatureNetTrainer(Trainer):
     def train(self, n_epochs, resume):
         # Set GPU visible to Tensorflow
         os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+        if tf.test.is_gpu_available():
+            print("GPU is available.")
+        else:
+            print("GPU is not available.")
 
 
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
@@ -638,7 +642,7 @@ class DeepSleepNetTrainer(Trainer):
     def finetune(self, pretrained_model_path, n_epochs, resume):
          # Set GPU visible to Tensorflow
         os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
-        
+
         pretrained_model_name = "deepfeaturenet"
 
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:

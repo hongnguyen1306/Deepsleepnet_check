@@ -25,7 +25,6 @@ def variable_with_weight_decay(name, shape, wd=None):
         fan_out = np.sqrt(np.prod(shape))
 
     # He et al. 2015 - http://arxiv.org/abs/1502.01852
-    print('===========    fan_in ', fan_in)
     stddev = np.sqrt(2.0 // fan_in.value)
     initializer = tf.compat.v1.truncated_normal_initializer(stddev=stddev)
 

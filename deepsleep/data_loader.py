@@ -128,8 +128,6 @@ class NonSeqDataLoader(object):
         # Reshape the data to match the input of the model - conv2d
 
         # Check the shape of data_train
-        print("data_train.shape\n", data_train.shape)
-
         data_train = np.squeeze(data_train)
         data_val = np.squeeze(data_val)
         data_train = data_train[:, :, np.newaxis, np.newaxis]

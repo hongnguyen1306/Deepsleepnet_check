@@ -98,7 +98,12 @@ def finetune(model_path, n_epochs):
 def main(argv=None):
     # Output dir
     os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
-    
+    if tf.test.is_gpu_available():
+            print("GPU is available.")
+        else:
+            print("GPU is not available.")
+
+
     output_dir = os.path.join(
         FLAGS.output_dir, "fold{}".format(FLAGS.fold_idx))
     if not FLAGS.resume:

@@ -72,8 +72,8 @@ class Trainer(object):
                 "f1={:.3f}, f1_weighted={:.3f}, precision={:.3f}, precision_weighted={:.3f} ".format(
                     valid_duration, n_valid_examples,
                     valid_loss, valid_reg_loss_value,
-                    valid_acc, val_acc_sklearn,
-                    val_f1, val_f1_weighted,
+                    valid_acc, valid_acc_sklearn,
+                    valid_f1, valid_f1_weighted,
                     valid_precision, valid_precision_weighted
                 )
             ))

@@ -100,8 +100,8 @@ def main(argv=None):
     os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
     if tf.test.is_gpu_available():
             print("GPU is available.")
-        else:
-            print("GPU is not available.")
+    else:
+        print("GPU is not available.")
 
 
     output_dir = os.path.join(

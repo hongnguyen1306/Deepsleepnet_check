@@ -82,7 +82,7 @@ class Trainer(object):
         else:
             print("\nelse: result of each epoch")
             print((
-                "epoch {}: "
+                "\nepoch {}: "
                 "train ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), "
                 "acc={:.3f}, acc_sklearn={:.3f}, "
                 "f1={:.3f}, f1_weighted={:.3f}, "
@@ -106,7 +106,7 @@ class Trainer(object):
             ))
 
         logging.info(
-            "epoch {} : "
+            "\nepoch {} : "
             "train ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, acc_sklearn={:.3f}, "
             "f1={:.3f}, f1_weighted={:.3f}, precision={:.3f}, precision_weighted={:.3f} | "
             "valid ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, acc_sklearn={:.3f}, "
@@ -174,9 +174,9 @@ class DeepFeatureNetTrainer(Trainer):
         batch_size, 
         input_dims, 
         n_classes,
-        interval_plot_filter=1,
-        interval_save_model=1,
-        interval_print_cm=1
+        interval_plot_filter=20,
+        interval_save_model=10,
+        interval_print_cm=5
     ):
         super(self.__class__, self).__init__(
             interval_plot_filter=interval_plot_filter,
@@ -461,8 +461,8 @@ class DeepFeatureNetTrainer(Trainer):
                 all_valid_precision[epoch] = valid_precision
                 all_valid_precision_weighted[epoch] = valid_precision_weighted
 
-                print("\nvalid_precision ", valid_precision)
-                print("\nvalid_precision_weighted ", valid_precision_weighted)
+                print("\ntrain_acc ", train_acc)
+                print("\nvalid_acc ", valid_acc)
 
                 # Report performance
                 self.print_performance(

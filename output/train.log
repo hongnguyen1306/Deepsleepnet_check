@@ -1,0 +1,46 @@
+INFO:root:
+epoch 1 : train (517.15 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.179, f1_weighted=0.179, precision=0.199, precision_weighted=0.199 | valid (3.22 sec): n=5400, loss=1.609 (0.000), acc=0.319, acc_sklearn=0.319, f1=0.097, f1_weighted=0.154, precision=0.064, precision_weighted=0.102
+INFO:root:
+epoch 2 : train (518.37 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.143, f1_weighted=0.143, precision=0.198, precision_weighted=0.198 | valid (3.27 sec): n=5400, loss=1.610 (0.000), acc=0.116, acc_sklearn=0.116, f1=0.041, f1_weighted=0.024, precision=0.023, precision_weighted=0.013
+INFO:root:
+epoch 3 : train (518.97 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.114, f1_weighted=0.114, precision=0.188, precision_weighted=0.188 | valid (3.17 sec): n=5400, loss=1.610 (0.000), acc=0.116, acc_sklearn=0.116, f1=0.041, f1_weighted=0.024, precision=0.023, precision_weighted=0.013
+INFO:root:
+epoch 4 : train (517.67 sec): n=215300, loss=1.609 (0.000), acc=0.200, acc_sklearn=0.200, f1=0.122, f1_weighted=0.122, precision=0.159, precision_weighted=0.159 | valid (3.25 sec): n=5400, loss=1.610 (0.000), acc=0.069, acc_sklearn=0.069, f1=0.026, f1_weighted=0.009, precision=0.014, precision_weighted=0.005
+INFO:root:
+epoch 5 : train (517.58 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.183, f1_weighted=0.183, precision=0.196, precision_weighted=0.196 | valid (3.27 sec): n=5400, loss=1.610 (0.000), acc=0.093, acc_sklearn=0.093, f1=0.034, f1_weighted=0.016, precision=0.019, precision_weighted=0.009
+INFO:root:
+epoch 6 : train (517.79 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.164, f1_weighted=0.164, precision=0.196, precision_weighted=0.196 | valid (3.29 sec): n=5400, loss=1.610 (0.000), acc=0.093, acc_sklearn=0.093, f1=0.034, f1_weighted=0.016, precision=0.019, precision_weighted=0.009
+INFO:root:
+epoch 7 : train (517.89 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.180, f1_weighted=0.180, precision=0.197, precision_weighted=0.197 | valid (3.25 sec): n=5400, loss=1.609 (0.000), acc=0.069, acc_sklearn=0.069, f1=0.026, f1_weighted=0.009, precision=0.014, precision_weighted=0.005
+INFO:root:
+epoch 8 : train (517.69 sec): n=215300, loss=1.609 (0.000), acc=0.200, acc_sklearn=0.200, f1=0.169, f1_weighted=0.169, precision=0.161, precision_weighted=0.161 | valid (3.25 sec): n=5400, loss=1.609 (0.000), acc=0.319, acc_sklearn=0.319, f1=0.097, f1_weighted=0.154, precision=0.064, precision_weighted=0.102
+INFO:root:
+epoch 9 : train (517.69 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.161, f1_weighted=0.161, precision=0.197, precision_weighted=0.197 | valid (3.24 sec): n=5400, loss=1.609 (0.000), acc=0.319, acc_sklearn=0.319, f1=0.097, f1_weighted=0.154, precision=0.064, precision_weighted=0.102
+INFO:root:
+epoch 10 : train (516.97 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.166, f1_weighted=0.166, precision=0.159, precision_weighted=0.159 | valid (3.25 sec): n=5400, loss=1.609 (0.000), acc=0.319, acc_sklearn=0.319, f1=0.097, f1_weighted=0.154, precision=0.064, precision_weighted=0.102
+INFO:root:
+epoch 11 : train (516.78 sec): n=215300, loss=1.609 (0.000), acc=0.200, acc_sklearn=0.200, f1=0.117, f1_weighted=0.117, precision=0.119, precision_weighted=0.119 | valid (3.24 sec): n=5400, loss=1.609 (0.000), acc=0.319, acc_sklearn=0.319, f1=0.097, f1_weighted=0.154, precision=0.064, precision_weighted=0.102
+INFO:root:
+epoch 12 : train (517.07 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.175, f1_weighted=0.175, precision=0.199, precision_weighted=0.199 | valid (3.25 sec): n=5400, loss=1.609 (0.000), acc=0.404, acc_sklearn=0.404, f1=0.115, f1_weighted=0.233, precision=0.081, precision_weighted=0.163
+INFO:root:
+epoch 13 : train (517.68 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.192, f1_weighted=0.192, precision=0.198, precision_weighted=0.198 | valid (3.24 sec): n=5400, loss=1.609 (0.000), acc=0.404, acc_sklearn=0.404, f1=0.115, f1_weighted=0.233, precision=0.081, precision_weighted=0.163
+INFO:root:
+epoch 14 : train (519.97 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.187, f1_weighted=0.187, precision=0.198, precision_weighted=0.198 | valid (3.25 sec): n=5400, loss=1.609 (0.000), acc=0.404, acc_sklearn=0.404, f1=0.115, f1_weighted=0.233, precision=0.081, precision_weighted=0.163
+INFO:root:
+epoch 15 : train (517.66 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.186, f1_weighted=0.186, precision=0.199, precision_weighted=0.199 | valid (3.26 sec): n=5400, loss=1.609 (0.000), acc=0.093, acc_sklearn=0.093, f1=0.034, f1_weighted=0.016, precision=0.019, precision_weighted=0.009
+INFO:root:
+epoch 16 : train (516.19 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.143, f1_weighted=0.143, precision=0.158, precision_weighted=0.158 | valid (3.28 sec): n=5400, loss=1.609 (0.000), acc=0.404, acc_sklearn=0.404, f1=0.115, f1_weighted=0.233, precision=0.081, precision_weighted=0.163
+INFO:root:
+epoch 17 : train (516.89 sec): n=215300, loss=1.609 (0.000), acc=0.200, acc_sklearn=0.200, f1=0.171, f1_weighted=0.171, precision=0.159, precision_weighted=0.159 | valid (3.22 sec): n=5400, loss=1.610 (0.000), acc=0.116, acc_sklearn=0.116, f1=0.041, f1_weighted=0.024, precision=0.023, precision_weighted=0.013
+INFO:root:
+epoch 18 : train (516.44 sec): n=215300, loss=1.609 (0.000), acc=0.197, acc_sklearn=0.197, f1=0.181, f1_weighted=0.181, precision=0.197, precision_weighted=0.197 | valid (3.18 sec): n=5400, loss=1.609 (0.000), acc=0.116, acc_sklearn=0.116, f1=0.041, f1_weighted=0.024, precision=0.023, precision_weighted=0.013
+INFO:root:
+epoch 19 : train (516.60 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.156, f1_weighted=0.156, precision=0.198, precision_weighted=0.198 | valid (3.23 sec): n=5400, loss=1.610 (0.000), acc=0.319, acc_sklearn=0.319, f1=0.097, f1_weighted=0.154, precision=0.064, precision_weighted=0.102
+INFO:root:
+epoch 20 : train (515.98 sec): n=215300, loss=1.609 (0.000), acc=0.199, acc_sklearn=0.199, f1=0.154, f1_weighted=0.154, precision=0.158, precision_weighted=0.158 | valid (3.21 sec): n=5400, loss=1.610 (0.000), acc=0.093, acc_sklearn=0.093, f1=0.034, f1_weighted=0.016, precision=0.019, precision_weighted=0.009
+INFO:root:
+epoch 21 : train (517.09 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.175, f1_weighted=0.175, precision=0.197, precision_weighted=0.197 | valid (3.32 sec): n=5400, loss=1.610 (0.000), acc=0.116, acc_sklearn=0.116, f1=0.041, f1_weighted=0.024, precision=0.023, precision_weighted=0.013
+INFO:root:
+epoch 22 : train (518.33 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.167, f1_weighted=0.167, precision=0.196, precision_weighted=0.196 | valid (3.25 sec): n=5400, loss=1.610 (0.000), acc=0.069, acc_sklearn=0.069, f1=0.026, f1_weighted=0.009, precision=0.014, precision_weighted=0.005
+INFO:root:
+epoch 23 : train (516.37 sec): n=215300, loss=1.609 (0.000), acc=0.198, acc_sklearn=0.198, f1=0.178, f1_weighted=0.178, precision=0.197, precision_weighted=0.197 | valid (3.29 sec): n=5400, loss=1.610 (0.000), acc=0.093, acc_sklearn=0.093, f1=0.034, f1_weighted=0.016, precision=0.019, precision_weighted=0.009

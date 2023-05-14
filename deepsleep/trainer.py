@@ -99,7 +99,7 @@ class Trainer(object):
                     train_precision, train_precision_weighted,
                     valid_duration, n_valid_examples,
                     valid_loss, valid_reg_loss_value,
-                    valid_acc, val_acc_sklearn,
+                    valid_acc, valid_acc_sklearn,
                     val_f1, val_f1_weighted,
                     valid_precision, valid_precision_weighted
                 )
@@ -119,7 +119,7 @@ class Trainer(object):
                 train_precision, train_precision_weighted,
                 valid_duration, n_valid_examples,
                 valid_loss, valid_reg_loss_value,
-                valid_acc, val_acc_sklearn,
+                valid_acc, valid_acc_sklearn,
                 val_f1, val_f1_weighted,
                 valid_precision, valid_precision_weighted
             )

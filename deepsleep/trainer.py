@@ -174,9 +174,9 @@ class DeepFeatureNetTrainer(Trainer):
         batch_size, 
         input_dims, 
         n_classes,
-        interval_plot_filter=20,
-        interval_save_model=10,
-        interval_print_cm=5
+        interval_plot_filter=1,
+        interval_save_model=1,
+        interval_print_cm=1
     ):
         super(self.__class__, self).__init__(
             interval_plot_filter=interval_plot_filter,
@@ -460,6 +460,9 @@ class DeepFeatureNetTrainer(Trainer):
                 all_valid_f1_weighted[epoch] = valid_f1_weighted
                 all_valid_precision[epoch] = valid_precision
                 all_valid_precision_weighted[epoch] = valid_precision_weighted
+
+                print("\nvalid_precision ", valid_precision)
+                print("\nvalid_precision_weighted ", valid_precision_weighted)
 
                 # Report performance
                 self.print_performance(

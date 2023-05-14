@@ -43,7 +43,6 @@ class DeepFeatureNet(object):
 
     def _conv1d_layer(self, input_var, filter_size, n_filters, stride, wd=0):
         input_shape = input_var.get_shape()
-        print('===== input_shape ======= ', input_shape)
         if isinstance(input_shape, int):
             n_batches = input_shape
             input_dims = input_shape

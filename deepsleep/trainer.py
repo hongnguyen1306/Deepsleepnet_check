@@ -469,8 +469,8 @@ class DeepFeatureNetTrainer(Trainer):
                     sess, output_dir, train_net.name,
                     n_train_examples, n_valid_examples,
                     train_cm, valid_cm, epoch, n_epochs,
-                    train_duration, train_loss, train_acc, train_f1, train_f1_weighted, train_precision, train_precision_weighted,
-                    valid_duration, valid_loss, valid_acc, valid_f1, valid_f1_weighted, valid_precision, valid_precision_weighted
+                    train_duration, train_loss, train_acc, train_acc_sklearn, train_f1, train_f1_weighted, train_precision, train_precision_weighted,
+                    valid_duration, valid_loss, valid_acc, valid_acc_sklearn, valid_f1, valid_f1_weighted, valid_precision, valid_precision_weighted
                 )
 
 
@@ -883,8 +883,8 @@ class DeepSleepNetTrainer(Trainer):
                     sess, output_dir, train_net.name,
                     n_train_examples, n_valid_examples,
                     train_cm, valid_cm, epoch, n_epochs,
-                    train_duration, train_loss, train_acc, train_f1,
-                    valid_duration, valid_loss, valid_acc, valid_f1
+                    train_duration, train_loss, train_acc, train_acc_sklearn, train_f1, train_f1_weighted, train_precision, train_precision_weighted,
+                    valid_duration, valid_loss, valid_acc, valid_acc_sklearn, valid_f1, valid_f1_weighted, valid_precision, valid_precision_weighted
                 )
 
                 # Save performance history

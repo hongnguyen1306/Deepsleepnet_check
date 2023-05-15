@@ -325,3 +325,253 @@ INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold
 WARNING:tensorflow:From /root/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
 Instructions for updating:
 This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:200: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+WARNING:tensorflow:Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:200: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+WARNING:tensorflow:Large dropout rate: 0.99 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:320: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:87: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:87: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:314: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:324: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:339: static_bidirectional_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell, unroll=True))`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn.py:1610: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:958: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:962: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/clip_ops.py:301: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:87: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:314: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:324: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:339: static_bidirectional_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell, unroll=True))`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn.py:1610: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:958: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:962: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/clip_ops.py:301: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:87: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:314: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:324: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:339: static_bidirectional_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell, unroll=True))`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn.py:1610: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:958: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:962: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/clip_ops.py:301: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:92: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+INFO:tensorflow:Restoring parameters from output/fold0/deepfeaturenet/model_fold0.ckpt-100
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:319: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:329: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:344: static_bidirectional_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell, unroll=True))`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn.py:1610: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:958: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/rnn_cell_impl.py:962: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From /home/rosa/miniconda3/envs/deepsleepnet/lib/python3.5/site-packages/tensorflow_core/python/ops/clip_ops.py:301: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where

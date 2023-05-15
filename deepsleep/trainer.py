@@ -197,7 +197,7 @@ class DeepFeatureNetTrainer(Trainer):
         #Use GPU
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
-        self.sess = tf.Session(config=config)
+        self.sess = tf.compat.v1.Session(config=config)
 
 
     def _run_epoch(self, sess, network, inputs, targets, train_op, is_train):
@@ -578,7 +578,7 @@ class DeepSleepNetTrainer(Trainer):
         
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
-        self.sess = tf.Session(config=config)
+        self.sess = tf.compat.v1.Session(config=config)
 
     def _run_epoch(self, sess, network, inputs, targets, train_op, is_train):
         start_time = time.time()
@@ -646,7 +646,7 @@ class DeepSleepNetTrainer(Trainer):
     def finetune(self, pretrained_model_path, n_epochs, resume):
         pretrained_model_name = "deepfeaturenet"
 
-        with tf.Graph().as_default(), tf.compat.v1.Session(), tf.device('/gpu:0') as sess:
+        with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
             # Build training and validation networks
             train_net = DeepSleepNet(
                 batch_size=self.batch_size, 

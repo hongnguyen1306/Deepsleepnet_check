@@ -89,9 +89,9 @@ class DeepFeatureNet(object):
         if self.use_dropout:
             name = "l{}_dropout".format(self.layer_idx)
             if self.is_train:
-                network = tf.nn.dropout(network, rate=0.5, name=name)
+                network = tf.nn.dropout(network, keep_prob=0.5, name=name)
             else:
-                network = tf.nn.dropout(network, rate=0.9, name=name)
+                network = tf.nn.dropout(network, keep_prob=1.0, name=name)
             self.activations.append((name, network))
         self.layer_idx += 1
 
@@ -130,9 +130,9 @@ class DeepFeatureNet(object):
         if self.use_dropout:
             name = "l{}_dropout".format(self.layer_idx)
             if self.is_train:
-                network = tf.nn.dropout(network, rate=0.5, name=name)
+                network = tf.nn.dropout(network, keep_prob=0.5, name=name)
             else:
-                network = tf.nn.dropout(network, rate=0.99, name=name)
+                network = tf.nn.dropout(network, keep_prob=1.0, name=name)
             self.activations.append((name, network))
         self.layer_idx += 1
 
@@ -167,9 +167,9 @@ class DeepFeatureNet(object):
         if self.use_dropout:
             name = "l{}_dropout".format(self.layer_idx)
             if self.is_train:
-                network = tf.nn.dropout(network, rate=0.5, name=name)
+                network = tf.nn.dropout(network, keep_prob=0.5, name=name)
             else:
-                network = tf.nn.dropout(network, rate=0.9, name=name)
+                network = tf.nn.dropout(network, keep_prob=1.0, name=name)
             self.activations.append((name, network))
         self.layer_idx += 1
 
@@ -318,10 +318,10 @@ class DeepSleepNet(DeepFeatureNet):
                                                 state_is_tuple=True,
                                                 reuse=tf.compat.v1.get_variable_scope().reuse) 
                 if self.use_dropout_sequence:
-                    rate = 0.5 #Change rate 
+                    keep_prob = 0.5 if self.is_train else 1.0
                     cell = tf.compat.v1.nn.rnn_cell.DropoutWrapper(
                         cell,
-                        output_rate=rate
+                        output_keep_prob=keep_prob
                     )
 
                 return cell
@@ -370,9 +370,9 @@ class DeepSleepNet(DeepFeatureNet):
         if self.use_dropout_sequence:
             name = "l{}_dropout".format(self.layer_idx)
             if self.is_train:
-                network = tf.nn.dropout(network, rate=0.5, name=name)
+                network = tf.nn.dropout(network, keep_prob=0.5, name=name)
             else:
-                network = tf.nn.dropout(network, rate=1.0, name=name)
+                network = tf.nn.dropout(network, keep_prob=1.0, name=name)
             self.activations.append((name, network))
         self.layer_idx += 1
 

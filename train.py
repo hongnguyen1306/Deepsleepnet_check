@@ -103,7 +103,6 @@ def main(argv=None):
     else:
         print("GPU is not available.")
 
-
     output_dir = os.path.join(
         FLAGS.output_dir, "fold{}".format(FLAGS.fold_idx))
     if not FLAGS.resume:

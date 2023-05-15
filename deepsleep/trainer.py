@@ -193,11 +193,15 @@ class DeepFeatureNetTrainer(Trainer):
         self.batch_size = batch_size
         self.input_dims = input_dims
         self.n_classes = n_classes
+        
+        #Use GPU
+        config = tf.ConfigProto()
+        config.gpu_options.allow_growth = True
+        self.sess = tf.Session(config=config)
+
 
     def _run_epoch(self, sess, network, inputs, targets, train_op, is_train):
         # Set GPU visible to Tensorflow
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
-
         start_time = time.time()
         y = []
         y_true = []
@@ -259,7 +263,6 @@ class DeepFeatureNetTrainer(Trainer):
 
     def train(self, n_epochs, resume):
         # Set GPU visible to Tensorflow
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
         if tf.test.is_gpu_available():
             print("GPU is available.")
         else:
@@ -328,7 +331,7 @@ class DeepFeatureNetTrainer(Trainer):
 
             # Create a saver
             saver = tf.compat.v1.train.Saver(tf.compat.v1.global_variables(), max_to_keep=0)
-
+            
             # Initialize variables in the graph
             sess.run(tf.compat.v1.global_variables_initializer())
 
@@ -572,11 +575,12 @@ class DeepSleepNetTrainer(Trainer):
         self.seq_length = seq_length
         self.n_rnn_layers = n_rnn_layers
         self.return_last = return_last
+        
+        config = tf.ConfigProto()
+        config.gpu_options.allow_growth = True
+        self.sess = tf.Session(config=config)
 
     def _run_epoch(self, sess, network, inputs, targets, train_op, is_train):
-         # Set GPU visible to Tensorflow
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
-
         start_time = time.time()
         y = []
         y_true = []
@@ -640,12 +644,9 @@ class DeepSleepNetTrainer(Trainer):
         return total_y_true, total_y_pred, total_loss, duration
 
     def finetune(self, pretrained_model_path, n_epochs, resume):
-         # Set GPU visible to Tensorflow
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
-
         pretrained_model_name = "deepfeaturenet"
 
-        with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
+        with tf.Graph().as_default(), tf.compat.v1.Session(), tf.device('/gpu:0') as sess:
             # Build training and validation networks
             train_net = DeepSleepNet(
                 batch_size=self.batch_size, 

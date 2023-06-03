@@ -1,0 +1,5 @@
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/trainer.py:198: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/rosa/Deepsleepnet_check/deepsleep/model.py:92: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
